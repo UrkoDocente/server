@@ -3,10 +3,13 @@ import cors from 'cors';
 
 const app = express();
 
-//app.use(cors()); // habilita CORS para TODAS las rutas y TODOS los orígenes
+app.use(cors()); // habilita CORS para TODAS las rutas y TODOS los orígenes
 
 app.get('/api', (req, res) => {
  fetchData(res);
+});
+app.get('/', (req, res) => {
+ res.send("Kaixo");
 });
 
 app.listen(3000, () => console.log('🟢 API en http://localhost:3000'));
